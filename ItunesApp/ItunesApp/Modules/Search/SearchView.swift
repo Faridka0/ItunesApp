@@ -17,16 +17,20 @@ class SearchView: MainView {
         sb.backgroundImage = UIImage()
         sb.tintColor = .white
         sb.barTintColor = .white
-        sb.color
         return sb
     }()
     
-    private let collectionView: UICollectionView = {
+    let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 16
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.register(ContentCVC.self, forCellWithReuseIdentifier: ContentCVC.cellID)
         cv.backgroundColor = .clear
         return cv
     }()
+    
+    
     
     
     //MARK: - Init

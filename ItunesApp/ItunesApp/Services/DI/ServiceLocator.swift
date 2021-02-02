@@ -26,6 +26,7 @@ class ServiceLocator {
     func createContainer() {
         let container = DependanciesContainer()
         container.register(IHttpClient.self, registrationBlock: HttpClient.init)
+        container.register(IAPI.self, registrationBlock: API.init)
         self.container = container
     }
 }

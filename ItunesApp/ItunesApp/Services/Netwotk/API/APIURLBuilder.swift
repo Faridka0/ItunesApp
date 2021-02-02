@@ -16,7 +16,7 @@ enum APIURLBuilder {
     static let lookup: URL = baseURL.appendingPathComponent("lookup")
     
     
-    static func searchURL(by query: String) -> URL {
+    static func searchURL(by query: String?) -> URL {
         search.appending("term", value: query).appending("limit", value: "25")
     }
     
