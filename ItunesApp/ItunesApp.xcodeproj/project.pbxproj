@@ -43,6 +43,10 @@
 		61A532CA25C9EE2500FF815E /* ContentAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A532C925C9EE2500FF815E /* ContentAPIModel.swift */; };
 		61A532F925C9F3C100FF815E /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A532F825C9F3C100FF815E /* Content.swift */; };
 		61A532FD25C9F84500FF815E /* ContentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A532FC25C9F84500FF815E /* ContentCVC.swift */; };
+		61A5330925CA006100FF815E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5330525CA006100FF815E /* DetailView.swift */; };
+		61A5330A25CA006100FF815E /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5330625CA006100FF815E /* DetailVC.swift */; };
+		61A5330B25CA006100FF815E /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5330725CA006100FF815E /* DetailAssembly.swift */; };
+		61A5330C25CA006100FF815E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5330825CA006100FF815E /* DetailViewModel.swift */; };
 		BD37880817C240BF9B0D350A /* Pods_ItunesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DEF3963A819BC7AFAE245C /* Pods_ItunesApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +91,10 @@
 		61A532C925C9EE2500FF815E /* ContentAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAPIModel.swift; sourceTree = "<group>"; };
 		61A532F825C9F3C100FF815E /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		61A532FC25C9F84500FF815E /* ContentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCVC.swift; sourceTree = "<group>"; };
+		61A5330525CA006100FF815E /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		61A5330625CA006100FF815E /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		61A5330725CA006100FF815E /* DetailAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
+		61A5330825CA006100FF815E /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E8177470672919EA42627168 /* Pods-ItunesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItunesApp.debug.xcconfig"; path = "Target Support Files/Pods-ItunesApp/Pods-ItunesApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +179,7 @@
 		6148031225C0B70C00DDDA34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				61A5330425CA006100FF815E /* Detail */,
 				61A5329F25C9E74E00FF815E /* History */,
 				61A5329125C9E73B00FF815E /* Search */,
 				61A5328325C9E69F00FF815E /* TabBar */,
@@ -306,6 +315,17 @@
 				61A532FC25C9F84500FF815E /* ContentCVC.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		61A5330425CA006100FF815E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				61A5330525CA006100FF815E /* DetailView.swift */,
+				61A5330625CA006100FF815E /* DetailVC.swift */,
+				61A5330725CA006100FF815E /* DetailAssembly.swift */,
+				61A5330825CA006100FF815E /* DetailViewModel.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		A69FAECF71DD2862B18EA533 /* Pods */ = {
@@ -450,10 +470,13 @@
 				61A532C025C9EA6400FF815E /* APIURLBuilder.swift in Sources */,
 				61A532A625C9E74E00FF815E /* HistoryAssembly.swift in Sources */,
 				61A532CA25C9EE2500FF815E /* ContentAPIModel.swift in Sources */,
+				61A5330925CA006100FF815E /* DetailView.swift in Sources */,
+				61A5330A25CA006100FF815E /* DetailVC.swift in Sources */,
 				6148032725C0B7C400DDDA34 /* Reactive+Ext.swift in Sources */,
 				61A5329725C9E73C00FF815E /* SearchView.swift in Sources */,
 				6148033525C0B8A900DDDA34 /* Text.swift in Sources */,
 				61A532A425C9E74E00FF815E /* HistoryViewModel.swift in Sources */,
+				61A5330C25CA006100FF815E /* DetailViewModel.swift in Sources */,
 				6148032025C0B76D00DDDA34 /* HttpClient.swift in Sources */,
 				6148033F25C0B92F00DDDA34 /* UIView+Ext.swift in Sources */,
 				61A532C725C9ED2000FF815E /* APIResponse.swift in Sources */,
@@ -463,6 +486,7 @@
 				61A532A525C9E74E00FF815E /* HistoryVC.swift in Sources */,
 				61A5329625C9E73C00FF815E /* SearchAssembly.swift in Sources */,
 				61A532FD25C9F84500FF815E /* ContentCVC.swift in Sources */,
+				61A5330B25CA006100FF815E /* DetailAssembly.swift in Sources */,
 				6148032625C0B7C400DDDA34 /* Data+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CGJVQCU8H;
 				INFOPLIST_FILE = ItunesApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,6 +651,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CGJVQCU8H;
 				INFOPLIST_FILE = ItunesApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

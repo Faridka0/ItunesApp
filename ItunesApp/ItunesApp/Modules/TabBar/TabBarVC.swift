@@ -14,7 +14,7 @@ final class TabBarVC: UITabBarController {
     //MARK: - Properties
     var viewModel: ITabBarViewModel!
     let bag = DisposeBag()
-    private let images: [String] = ["magnifyingglass.circle", "clock"]
+    private let images: [String] = ["search", "clock"]
 
     
     //MARK: - Lifecycle
@@ -27,7 +27,7 @@ final class TabBarVC: UITabBarController {
     private func configure() {
         if let count = self.tabBar.items?.count {
             for i in 0..<count {
-                self.tabBar.items?[i].image = UIImage(systemName: images[i])
+                self.tabBar.items?[i].image = UIImage(named: images[i])
             }
         }
     }

@@ -60,7 +60,7 @@ class SearchViewModel: ISearchViewModel {
                 .search(query)
                 .asObservable()
                 .map({ result -> [Content] in
-                    return result?.results?.compactMap({ $0.map() }) ?? []
+                    return result?.results?.compactMap({ $0.map() }).sorted(by: { $0.title > $1.title }) ?? []
                 })
                 .bind(to: vm.content)
                 .disposed(by: vm.bag)
