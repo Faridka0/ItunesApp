@@ -20,8 +20,7 @@ protocol IHttpClient: class {
     func request<T: Codable>(method: HTTPMethod,
                              type: T.Type,
                              url: URL,
-                             parameters: [String: Any]?,
-                             withAuth: Bool) -> Observable<T?>
+                             parameters: [String: Any]?) -> Observable<T?>
     
 }
 
@@ -29,9 +28,8 @@ extension IHttpClient {
     func request<T: Codable>(method: HTTPMethod = .post,
                              type: T.Type,
                              url: URL,
-                             parameters: [String: Any]? = nil,
-                             withAuth: Bool = true) -> Observable<T?> {
-        return request(method: method, type: type, url: url, parameters: parameters, withAuth: withAuth)
+                             parameters: [String: Any]? = nil) -> Observable<T?> {
+        return request(method: method, type: type, url: url, parameters: parameters)
     }
 }
 
@@ -42,13 +40,12 @@ class HttpClient: IHttpClient {
     func request<T: Codable>(method: HTTPMethod,
                              type: T.Type,
                              url: URL,
-                             parameters: [String: Any]?,
-                             withAuth: Bool) -> Observable<T?> {
+                             parameters: [String: Any]?) -> Observable<T?> {
         
         let result: BehaviorRelay<T?> = BehaviorRelay(value: nil)
         
         if var request = requestBuilder(method: method, url: url) {
-            // Fill params
+            
             if let params = parameters {
                 let data = try? JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
                 request.httpBody = data
@@ -56,7 +53,7 @@ class HttpClient: IHttpClient {
             
             URLSession.shared.rx.response(request: request)
                 .debug()
-                .map ({ [weak self] response, data -> Data in
+                .map ({ response, data -> Data in
                     
                     return data
                 })

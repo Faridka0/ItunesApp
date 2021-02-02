@@ -8,5 +8,8 @@
 import Foundation
 
 enum Text {
-    
+    enum Tab: String {
+        case search = "Search"
+        case history = "History"
+    }
 }
