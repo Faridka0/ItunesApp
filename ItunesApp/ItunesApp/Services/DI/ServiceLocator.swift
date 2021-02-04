@@ -27,6 +27,7 @@ class ServiceLocator {
         let container = DependanciesContainer()
         container.register(IHttpClient.self, registrationBlock: HttpClient.init)
         container.register(IAPI.self, registrationBlock: API.init)
+        container.register(IRealmService.self, registrationBlock: RealmService.init)
         self.container = container
     }
 }

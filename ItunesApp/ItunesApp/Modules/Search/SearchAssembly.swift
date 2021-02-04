@@ -9,7 +9,7 @@ import UIKit
 
 final class SearchAssembly {
 
-    static func module() -> UIViewController {
+    static func module() -> SearchVC {
         let viewModel = SearchViewModel()
         let viewController = SearchVC(viewModel: viewModel)
         viewController.title = Text.Tab.search.rawValue

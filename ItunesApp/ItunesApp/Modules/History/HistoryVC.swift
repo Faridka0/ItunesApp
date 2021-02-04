@@ -42,7 +42,24 @@ final class HistoryVC: ViewController<HistoryView> {
     
     //MARK: - Binding
     func binding() {
+        bindTableView()
+    }
+    
+    func bindTableView() {
+        viewModel.output.history
+            .asObservable()
+            .bind(to: mainView.tableView.rx.items(cellIdentifier: HistoryTVC.cellID, cellType: HistoryTVC.self)) { _, element, cell in
+                cell.configure(text: element.text)
+            }
+            .disposed(by: bag)
         
+        mainView.tableView.rx.itemSelected.bind { [unowned self] indexPath in
+            guard let item = self.viewModel.output.history.value[safe: indexPath.row] else { return }
+            let newVC = SearchAssembly.module()
+            newVC.viewModel.input.search.accept(item.text)
+            newVC.viewModel.output.searchBarIsHidden.accept(true)
+            self.present(newVC, animated: true)
+        }.disposed(by: bag)
     }
     
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6125083825CB72540036B3CD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6125083725CB72540036B3CD /* RealmService.swift */; };
+		6125083C25CB72920036B3CD /* HistoryRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6125083B25CB72920036B3CD /* HistoryRM.swift */; };
+		613C150F25CB637B009FEDE3 /* DetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C150D25CB637B009FEDE3 /* DetailTVC.swift */; };
+		613C151025CB637B009FEDE3 /* DetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 613C150E25CB637B009FEDE3 /* DetailTVC.xib */; };
 		614802F925C0B61000DDDA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614802F825C0B61000DDDA34 /* AppDelegate.swift */; };
 		6148030225C0B61400DDDA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6148030125C0B61400DDDA34 /* Assets.xcassets */; };
 		6148030525C0B61400DDDA34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6148030325C0B61400DDDA34 /* LaunchScreen.storyboard */; };
@@ -47,12 +51,17 @@
 		61A5330A25CA006100FF815E /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5330625CA006100FF815E /* DetailVC.swift */; };
 		61A5330B25CA006100FF815E /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5330725CA006100FF815E /* DetailAssembly.swift */; };
 		61A5330C25CA006100FF815E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5330825CA006100FF815E /* DetailViewModel.swift */; };
+		61A5331125CA073500FF815E /* HistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5331025CA073500FF815E /* HistoryTVC.swift */; };
 		BD37880817C240BF9B0D350A /* Pods_ItunesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DEF3963A819BC7AFAE245C /* Pods_ItunesApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02DEF3963A819BC7AFAE245C /* Pods_ItunesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ItunesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		389D7329C826B98933226B29 /* Pods-ItunesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItunesApp.release.xcconfig"; path = "Target Support Files/Pods-ItunesApp/Pods-ItunesApp.release.xcconfig"; sourceTree = "<group>"; };
+		6125083725CB72540036B3CD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		6125083B25CB72920036B3CD /* HistoryRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRM.swift; sourceTree = "<group>"; };
+		613C150D25CB637B009FEDE3 /* DetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTVC.swift; sourceTree = "<group>"; };
+		613C150E25CB637B009FEDE3 /* DetailTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTVC.xib; sourceTree = "<group>"; };
 		614802F525C0B61000DDDA34 /* ItunesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		614802F825C0B61000DDDA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6148030125C0B61400DDDA34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +104,7 @@
 		61A5330625CA006100FF815E /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		61A5330725CA006100FF815E /* DetailAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
 		61A5330825CA006100FF815E /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		61A5331025CA073500FF815E /* HistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTVC.swift; sourceTree = "<group>"; };
 		E8177470672919EA42627168 /* Pods-ItunesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItunesApp.debug.xcconfig"; path = "Target Support Files/Pods-ItunesApp/Pods-ItunesApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +126,32 @@
 				02DEF3963A819BC7AFAE245C /* Pods_ItunesApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6125083525CB724B0036B3CD /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				6125083A25CB72870036B3CD /* Models */,
+				6125083725CB72540036B3CD /* RealmService.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		6125083A25CB72870036B3CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6125083B25CB72920036B3CD /* HistoryRM.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6125083F25CB75120036B3CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				613C150D25CB637B009FEDE3 /* DetailTVC.swift */,
+				613C150E25CB637B009FEDE3 /* DetailTVC.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		614802EC25C0B61000DDDA34 = {
@@ -190,6 +226,7 @@
 		6148031325C0B71300DDDA34 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6125083525CB724B0036B3CD /* Realm */,
 				6148031C25C0B75300DDDA34 /* Netwotk */,
 				6148031425C0B73000DDDA34 /* DI */,
 			);
@@ -273,6 +310,7 @@
 		61A5329F25C9E74E00FF815E /* History */ = {
 			isa = PBXGroup;
 			children = (
+				61A5330F25CA072300FF815E /* Views */,
 				61A532A025C9E74E00FF815E /* HistoryViewModel.swift */,
 				61A532A125C9E74E00FF815E /* HistoryVC.swift */,
 				61A532A225C9E74E00FF815E /* HistoryAssembly.swift */,
@@ -320,12 +358,21 @@
 		61A5330425CA006100FF815E /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				6125083F25CB75120036B3CD /* Views */,
 				61A5330525CA006100FF815E /* DetailView.swift */,
 				61A5330625CA006100FF815E /* DetailVC.swift */,
 				61A5330725CA006100FF815E /* DetailAssembly.swift */,
 				61A5330825CA006100FF815E /* DetailViewModel.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		61A5330F25CA072300FF815E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				61A5331025CA073500FF815E /* HistoryTVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A69FAECF71DD2862B18EA533 /* Pods */ = {
@@ -398,6 +445,7 @@
 			files = (
 				6148030525C0B61400DDDA34 /* LaunchScreen.storyboard in Resources */,
 				61A5328B25C9E69F00FF815E /* TabBar.storyboard in Resources */,
+				613C151025CB637B009FEDE3 /* DetailTVC.xib in Resources */,
 				6148030225C0B61400DDDA34 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +505,7 @@
 				61A532F925C9F3C100FF815E /* Content.swift in Sources */,
 				61A532A725C9E74E00FF815E /* HistoryView.swift in Sources */,
 				61A5328925C9E69F00FF815E /* TabBarAssembly.swift in Sources */,
+				61A5331125CA073500FF815E /* HistoryTVC.swift in Sources */,
 				6148031825C0B73000DDDA34 /* ServiceLocator.swift in Sources */,
 				6148031A25C0B73000DDDA34 /* DependanciesContainer.swift in Sources */,
 				61A532BC25C9EA1C00FF815E /* API.swift in Sources */,
@@ -482,12 +531,15 @@
 				61A532C725C9ED2000FF815E /* APIResponse.swift in Sources */,
 				6148033C25C0B91200DDDA34 /* UIColor+Ext.swift in Sources */,
 				61A5329925C9E73C00FF815E /* SearchVC.swift in Sources */,
+				6125083C25CB72920036B3CD /* HistoryRM.swift in Sources */,
 				6148031925C0B73000DDDA34 /* Injected.swift in Sources */,
+				613C150F25CB637B009FEDE3 /* DetailTVC.swift in Sources */,
 				61A532A525C9E74E00FF815E /* HistoryVC.swift in Sources */,
 				61A5329625C9E73C00FF815E /* SearchAssembly.swift in Sources */,
 				61A532FD25C9F84500FF815E /* ContentCVC.swift in Sources */,
 				61A5330B25CA006100FF815E /* DetailAssembly.swift in Sources */,
 				6148032625C0B7C400DDDA34 /* Data+Ext.swift in Sources */,
+				6125083825CB72540036B3CD /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,13 +52,19 @@ final class SearchVC: ViewController<SearchView> {
             .skip(1)
             .debounce(.seconds(2), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
-            .map { result -> String? in
+            .map { [unowned self] result -> String? in
                 if result?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
                     return nil
                 }
-                return result
+                self.viewModel.saveHistory(result)
+                return result?.lowercased()
             }
             .bind(to: viewModel.input.search)
+            .disposed(by: bag)
+        
+        viewModel.output.searchBarIsHidden
+            .asObservable()
+            .bind(to: mainView.searchBar.rx.isHidden)
             .disposed(by: bag)
     }
     
@@ -78,6 +84,12 @@ final class SearchVC: ViewController<SearchView> {
             }
             .bind(to: mainView.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: bag)
+        
+        mainView.collectionView.rx.modelSelected(Content.self).bind { [unowned self] model in
+            let newVC = DetailAssembly.module()
+            newVC.viewModel.input.collectionID.accept(model.id)
+            self.present(newVC, animated: true)
+        }.disposed(by: bag)
     }
     
 }

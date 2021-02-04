@@ -9,7 +9,7 @@ import UIKit
 
 final class DetailAssembly {
 
-    static func module() -> UIViewController {
+    static func module() -> DetailVC {
         let viewModel = DetailViewModel()
         let viewController = DetailVC(viewModel: viewModel)
         return viewController

@@ -12,5 +12,6 @@ target 'ItunesApp' do
 	pod 'RxDataSources'
   	pod 'SnapKit'
 	pod 'SDWebImage'
+	pod 'RealmSwift'
 
 end

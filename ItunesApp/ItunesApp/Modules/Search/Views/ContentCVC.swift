@@ -11,6 +11,7 @@ class ContentCVC: UICollectionViewCell {
     
     static let cellID: String = "ContentCVC"
     
+    //MARK: - Views
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .bold)
@@ -46,6 +47,7 @@ class ContentCVC: UICollectionViewCell {
         return view
     }()
     
+    //MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         fill()
@@ -55,6 +57,7 @@ class ContentCVC: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Configure
     override func prepareForReuse() {
         super.prepareForReuse()
         contentImageView.image = nil

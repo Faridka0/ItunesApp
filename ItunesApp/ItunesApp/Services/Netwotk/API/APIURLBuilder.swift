@@ -20,5 +20,9 @@ enum APIURLBuilder {
         search.appending("term", value: query).appending("limit", value: "25")
     }
     
+    static func songsURL(by collectionID: Int) -> URL {
+        lookup.appending("entity", value: "song").appending("id", value: "\(collectionID)")
+    }
+    
     
 }

@@ -12,7 +12,12 @@ import RxCocoa
 class HistoryView: MainView {
 
     //MARK: - Views
-    
+    let tableView: UITableView = {
+        let tb = UITableView(frame: .zero, style: .grouped)
+        tb.backgroundColor = .clear
+        tb.register(HistoryTVC.self, forCellReuseIdentifier: HistoryTVC.cellID)
+        return tb
+    }()
     
     
     //MARK: - Init
@@ -28,8 +33,12 @@ class HistoryView: MainView {
     
     //MARK: - Fill view
     private func fill() {
-        backgroundColor = .white
-        addSubviews()
+        addSubview(tableView)
+        
+        tableView.snp.makeConstraints { (make) in
+            make.leading.trailing.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(16)
+        }
     }
     
 }

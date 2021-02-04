@@ -17,6 +17,7 @@ class SearchView: MainView {
         sb.backgroundImage = UIImage()
         sb.tintColor = .white
         sb.barTintColor = .white
+        (sb.value(forKey: "searchField") as? UITextField)?.textColor = .white
         return sb
     }()
     

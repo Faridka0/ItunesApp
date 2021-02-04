@@ -10,12 +10,13 @@ import Foundation
 struct ContentAPIModel: Codable {
     let collectionId: Int?
     let artistName, collectionName, artworkUrl100: String?
+    let trackName: String?
 }
 
 
 extension ContentAPIModel {
     func map() -> Content? {
-        guard let id = collectionId, let title = collectionName, let artistName = artistName else { return nil }
-        return Content(id: id, title: title, artistName: artistName, imageURL: URL(string: artworkUrl100 ?? ""))
+        guard let id = collectionId, let title = collectionName, let artistName = artistName, let trackName = trackName else { return nil }
+        return Content(id: id, title: title, artistName: artistName, trackName: trackName, imageURL: URL(string: artworkUrl100 ?? ""))
     }
 }

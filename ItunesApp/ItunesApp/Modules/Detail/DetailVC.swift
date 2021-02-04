@@ -42,9 +42,23 @@ final class DetailVC: ViewController<DetailView> {
     
     //MARK: - Binding
     func binding() {
+        viewModel.output.content
+            .asObservable()
+            .skip(1)
+            .map({ $0 ?? [] })
+            .bind(to: mainView.tableView.rx.items(cellIdentifier: DetailTVC.cellID, cellType: DetailTVC.self)) { index, element, cell in
+                cell.configure(element.trackName)
+            }.disposed(by: bag)
+        
+        viewModel.output.content
+            .asObservable()
+            .skip(1)
+            .map({ $0?.first })
+            .bind(to: mainView.configureBinder())
+            .disposed(by: bag)
+        
         
     }
-    
 }
 
 

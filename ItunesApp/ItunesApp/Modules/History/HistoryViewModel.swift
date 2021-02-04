@@ -16,6 +16,7 @@ struct HistoryViewModelInput {
 
 struct HistoryViewModelOutput {
     
+    let history: BehaviorRelay<[HistoryRM]>
     
 }
 
@@ -29,8 +30,8 @@ protocol IHistoryViewModel {
 class HistoryViewModel: IHistoryViewModel {
     
     //MARK: - Properties
-//    @LazyInjected
-//    private var service: IServiceService
+    @LazyInjected
+    private var realmService: IRealmService
     
     private let bag = DisposeBag()
     let input: HistoryViewModelInput
@@ -41,12 +42,14 @@ class HistoryViewModel: IHistoryViewModel {
     
     
     //MARK: - For output
-    
+    private let history: BehaviorRelay<[HistoryRM]> = BehaviorRelay(value: [])
     
     //MARK: - Init
     init() {
         input = HistoryViewModelInput()
-        output = HistoryViewModelOutput()
+        output = HistoryViewModelOutput(history: history)
+        
+        history.accept(realmService.read(by: HistoryRM.self))
     }
     
 }

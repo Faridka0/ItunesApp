@@ -31,6 +31,7 @@ struct Content {
     let id: Int
     let title: String
     let artistName: String
+    let trackName: String
     let imageURL: URL?
 }
 
